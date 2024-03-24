@@ -13,7 +13,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 client = OpenAI(
-    api_key="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"
+    api_key=''
 )
 
 app = Flask(__name__)
