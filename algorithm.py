@@ -12,34 +12,34 @@ def containerizeOriginal(sampleData):
 	# the code block below determines perfect pallet QTYS's
 	perfectPallets = []
 
-	for i, blah in enumerate(algorithmData):
+	for i, module in enumerate(algorithmData):
 
-		checker = functions.ecIncrementedCheck(blah[0])
+		checker = functions.ecIncrementedCheck(module[0])
 
 		if not checker:
-			if blah[1] > blah[0]:
+			if module[1] > module[0]:
 
-				perfectPallets.append([blah[0], blah[0]])
+				perfectPallets.append([module[0], module[0]])
 
-				algorithmData[i][1] = blah[1] - blah[0]
-			elif blah[1] == blah[0]:
+				algorithmData[i][1] = module[1] - module[0]
+			elif module[1] == module[0]:
 				
-				perfectPallets.append([blah[1], blah[1]])
+				perfectPallets.append([module[1], module[1]])
 
 				algorithmData[i][1] = 0
 
 		else:
-			blah[0] -= 1
-			if blah[1] > blah[0]:
+			module[0] -= 1
+			if module[1] > module[0]:
 
-				perfectPallets.append([blah[0] + 1, blah[0]])
+				perfectPallets.append([module[0] + 1, module[0]])
 				
-				algorithmData[i][1] = blah[1] - blah[0]
-			elif blah[1] == blah[0]:
-				perfectPallets.append([blah[0] + 1, blah[0]])
+				algorithmData[i][1] = module[1] - module[0]
+			elif module[1] == module[0]:
+				perfectPallets.append([module[0] + 1, module[0]])
 
 				algorithmData[i][1] = 0
-			blah[0] += 1
+			module[0] += 1
 
 	d = []
 	# d is for double pallets
